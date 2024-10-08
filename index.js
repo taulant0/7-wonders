@@ -6,7 +6,7 @@ import { fileURLToPath } from "url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const app = express();
-const port = 3000;
+
 app.use(express.static("public"));
 
 let authorisedPage = "index.html"; 
@@ -51,6 +51,7 @@ function passwordCheck(req, res, next) {
 
   next();
 }
+
 app.use(passwordCheck);
 
 app.get("/", (req, res) => {
@@ -61,7 +62,5 @@ app.post("/check", (req, res) => {
   res.sendFile(__dirname + `/public/${authorisedPage}`);
 });
 
-app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
-});
+// No app.listen call needed for Vercel deployment
 export default app;
