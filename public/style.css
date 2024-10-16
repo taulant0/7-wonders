@@ -86,6 +86,7 @@ bottom: 0;
     height: 20px;
     background: rgba(255, 255, 255, 0.2);
     animation: animate 25s linear infinite;
+    z-index: 1;
    
     
 }
@@ -136,10 +137,13 @@ bottom: 0;
 }
 
 .circles li:nth-child(7){
-    left: 35%;
+    left: 5%;
     width: 150px;
     height: 150px;
     animation-delay: 7s;
+
+        z-index: 0;
+    
 }
 
 .circles li:nth-child(8){
@@ -200,4 +204,45 @@ form input[type="submit"] {
 
 form input[type="submit"]:hover {
     background-color: #8f94fb;  
+}
+
+.card-img-top{
+    height: 600px;
+
+}
+
+@media screen and (max-width: 768px) {
+    .card-img-top{
+        padding-top: 20px;
+        height: 300px;
+    
+    }
+    .area{
+        height: 1150px;
+    }
+
+ 
+
+
+}
+
+/* Media query for mobile devices (screen width 576px and below) */
+@media screen and (max-width: 576px) {
+    .card-img-top{
+        padding-top: 20px;
+        height: 300px;
+    
+    }
+.area{
+    height: 1150px;
+}
+
+
+}
+
+.card{
+
+    width: 1000px; 
+    height:950px;
+  
 }
